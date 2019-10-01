@@ -15,20 +15,16 @@ import org.springframework.lang.Nullable;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.util.Assert;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
-import java.util.List;
 
-import static boost.brain.course.tasks.Constants.*;
+import static boost.brain.course.tasks.Constants.CREATE_PREFIX;
+import static boost.brain.course.tasks.Constants.TASKS_CONTROLLER_PREFIX;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 
 @RunWith(SpringRunner.class)
@@ -59,38 +55,48 @@ public class TaskControllerTest {
     }
 
     @Test
-    public void createGoodObject() {
-        log.info("Создание образцового объекта без дефектов");
+    public void testApiWithCreateGoodObject() {
+        log.info("тестирование API для образцового объекта без дефектов");
         taskDto = initSampleObjectTaskDto();
 
-        ResultActions resultActions = null;
+        ResultActions resultActions;
         try {
             resultActions = saveInstanceTaskToDB(taskDto);
         } catch (Exception e) {
             log.severe("ошибка при отправке запроса");
             fail();
+            return;
         }
         TaskDto taskDtoFromAPI = receiveTaskDtoFromResultAction(resultActions);
         if (taskDtoFromAPI == null) {
             fail();
         } else {
             assertEquals(taskDto.getAuthor(), taskDtoFromAPI.getAuthor());
-
         }
-
-
-
     }
 
 
- /*   @Test
-    public void createWithBadProjectId() throws Exception {
-        initSampleObjectTaskDto();
+    @Test
+    public void testApiWithBadProjectId() {
+        log.info("тестирование API для образцового объекта с дефектным id проекта");
+        taskDto = initSampleObjectTaskDto();
         taskDto.setProject(0);
-        saveInstanceTaskToDB();
-        assertThat(mockMvcResult.andReturn().getResolvedException()).isNotNull();
+        ResultActions resultActions;
+        try {
+            resultActions = saveInstanceTaskToDB(taskDto);
+        } catch (Exception e) {
+            log.severe("ошибка при отправке запроса");
+            fail();
+            return;
+        }
+        try {
+            assertThat(resultActions.andReturn().getResolvedException().toString().endsWith("NotFoundException"));
+        } catch (NullPointerException e) {
+            fail();
+        }
     }
 
+    /*
     @Test
     public void createWithBadAuthor() throws Exception {
         initSampleObjectTaskDto();
