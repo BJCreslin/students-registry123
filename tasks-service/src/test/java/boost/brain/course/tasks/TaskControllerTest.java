@@ -22,8 +22,7 @@ import java.io.UnsupportedEncodingException;
 import static boost.brain.course.tasks.Constants.CREATE_PREFIX;
 import static boost.brain.course.tasks.Constants.TASKS_CONTROLLER_PREFIX;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 
@@ -89,11 +88,7 @@ public class TaskControllerTest {
             fail();
             return;
         }
-        try {
-            assertThat(resultActions.andReturn().getResolvedException().toString().endsWith("NotFoundException"));
-        } catch (NullPointerException e) {
-            fail();
-        }
+            assertNotNull(resultActions.andReturn().getResolvedException());
     }
 
     /*
