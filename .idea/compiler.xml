@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tasks-service" />
+        <module name="register-service" />
+        <module name="example-service" />
+        <module name="frontend" />
+        <module name="jsf-frontend" />
+        <module name="auth-service" />
+        <module name="test-util" />
+        <module name="common-types" />
+        <module name="users-service" />
+        <module name="projects-service" />
+        <module name="common-auth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-service" target="1.8" />
+      <module name="common-auth" target="1.8" />
+      <module name="common-types" target="1.8" />
+      <module name="example-service" target="1.8" />
+      <module name="frontend" target="1.8" />
+      <module name="jsf-frontend" target="1.8" />
+      <module name="projects-service" target="1.8" />
+      <module name="register-service" target="1.8" />
+      <module name="students-registry" target="1.8" />
+      <module name="tasks-service" target="1.8" />
+      <module name="test-util" target="1.7" />
+      <module name="users-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-service" options="-parameters" />
+      <module name="common-auth" options="-parameters" />
+      <module name="common-types" options="-parameters" />
+      <module name="example-service" options="-parameters" />
+      <module name="frontend" options="-parameters" />
+      <module name="jsf-frontend" options="-parameters" />
+      <module name="projects-service" options="-parameters" />
+      <module name="register-service" options="-parameters" />
+      <module name="tasks-service" options="-parameters" />
+      <module name="test-util" options="-parameters" />
+      <module name="users-service" options="-parameters" />
+    </option>
+  </component>
+</project>

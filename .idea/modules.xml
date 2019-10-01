@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/auth-service/auth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-auth/common-auth.iml" filepath="$PROJECT_DIR$/common-auth/common-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-types/common-types.iml" filepath="$PROJECT_DIR$/common-types/common-types.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example-service/example-service.iml" filepath="$PROJECT_DIR$/example-service/example-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsf-frontend/jsf-frontend.iml" filepath="$PROJECT_DIR$/jsf-frontend/jsf-frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects-service/projects-service.iml" filepath="$PROJECT_DIR$/projects-service/projects-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/register-service/register-service.iml" filepath="$PROJECT_DIR$/register-service/register-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/students-registry.iml" filepath="$PROJECT_DIR$/students-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tasks-service/tasks-service.iml" filepath="$PROJECT_DIR$/tasks-service/tasks-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-util/test-util.iml" filepath="$PROJECT_DIR$/test-util/test-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/users-service/users-service.iml" filepath="$PROJECT_DIR$/users-service/users-service.iml" />
+    </modules>
+  </component>
+</project>

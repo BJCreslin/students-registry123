@@ -1,0 +1,5 @@
+/.git
+
+# Project exclude paths
+/common-auth/target/
+/tasks-service/target/
